@@ -111,12 +111,10 @@ node_modules
 
 # local files
 ../db.txt
-../notes.txt
 ../notes_for_client.txt
 ../info.txt
 info.txt
 notes_for_client.txt
-notes.txt
 db.txt
 secrets.sh
 static_cdn/

@@ -178,6 +178,6 @@ CHANNEL_LAYERS = {
     },
 }
 
-ASGI_APPLICATION = "websocket_app.routing.application"
+ASGI_APPLICATION = "djsr.routing.application"
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'

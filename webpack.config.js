@@ -25,9 +25,17 @@ module.exports = {
                 // for matching files, use the babel-loader
                 use: {
                     loader: "babel-loader",
-                    options: {presets: ["@babel/env"]}
+                    options: {presets: ["@babel/env", "@babel/preset-react"]}
                 },
-            }
+            },
+            {
+                test: /\.(png|jp?g|gif|svg)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
+              }
         ],
     },
 };

@@ -14,8 +14,8 @@ export const GalleryWebSockets = () => {
     const [numUsers, setNumUsers] = useState(0);
     const [cursors, setCursors] = useState([]);
     const [lastUpdate, setLastUpdate] = useState();
+    const [uuid, setUuid] = useState(uuidv4());
 
-    const uuid = uuidv4();
     const {
         sendMessage,
         sendJsonMessage,
@@ -71,16 +71,14 @@ export const GalleryWebSockets = () => {
             setNumUsers(Object.keys(lastJsonMessage).length-1);
             delete lastJsonMessage[uuid];  // remove own uuid
             let renderList = [];
-            for (const [uuid, x, y] of Object.entries(cursors)){
-                let style = `transform:translate(${x}px, ${y}px)`
-                renderList.concat(<img src={PointerImg} style={style} />) 
+            for (const [key, values] of Object.entries(lastJsonMessage)){
+                let styling = {transform:`translate(${values["x"]}px, ${values["y"]}px)`};
+                renderList.push(<img key={uuid} src={PointerImg} style={styling} />);
             }
             setCursors(renderList);
+            console.log(cursors);
         }
     }, [lastJsonMessage]);
-
-    
-
 
     return(
         <>

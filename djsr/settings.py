@@ -189,5 +189,3 @@ CHANNEL_LAYERS = {
 
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
-
-django_heroku.settings(locals())

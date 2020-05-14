@@ -62,7 +62,6 @@ export const GalleryWebSockets = () => {
                 renderList.push(<img key={uuid} src={PointerImg} style={styling} />);
             }
             setCursors(renderList);
-            console.log(cursors);
         }
     }, [lastJsonMessage]);
 

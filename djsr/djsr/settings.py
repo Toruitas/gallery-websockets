@@ -1,6 +1,7 @@
 import os
 from datetime import timedelta
 import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -119,7 +120,7 @@ USE_TZ = True
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 print(STATIC_ROOT)
 
 # STATICFILES_DIRS = [
@@ -188,3 +189,5 @@ CHANNEL_LAYERS = {
 
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
+django_heroku.settings(locals())

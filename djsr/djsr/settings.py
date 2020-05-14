@@ -62,6 +62,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'djsr.wsgi.application'
+ASGI_APPLICATION = "djsr.routing.application"
 
 
 # Database
@@ -114,17 +115,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 # https://devcenter.heroku.com/articles/django-assets
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, "static"),
     # '/var/www/static/',
 # ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Custom user model
 AUTH_USER_MODEL = "authentication.CustomUser"
@@ -184,6 +184,5 @@ CHANNEL_LAYERS = {
     },
 }
 
-ASGI_APPLICATION = "djsr.routing.application"
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'

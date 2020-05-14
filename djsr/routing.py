@@ -1,5 +1,4 @@
 from channels.routing import ProtocolTypeRouter, URLRouter
-from channels.sessions import SessionMiddlewareStack
 import gallery.routing
 
 application = ProtocolTypeRouter({
@@ -7,6 +6,5 @@ application = ProtocolTypeRouter({
     'websocket':
         URLRouter(
             gallery.routing.websocket_urlpatterns,
-        )
-            
+        )            
 })

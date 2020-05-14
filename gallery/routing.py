@@ -7,6 +7,5 @@ from django.conf.urls import url
 from . import consumers
 
 websocket_urlpatterns = [
-    # url(r'^ws/gallery/$', consumers.ChatConsumer),
     url(r'^ws/gallery/$', consumers.CoordConsumer),
 ]

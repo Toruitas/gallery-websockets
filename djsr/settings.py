@@ -1,7 +1,6 @@
 import os
 from datetime import timedelta
 import dj_database_url
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -159,7 +158,7 @@ SIMPLE_JWT = {
 
 # Below follwoing https://itnext.io/heroku-chatbot-with-celery-websockets-and-redis-340fcd160f06
 
-REDIS_URL = "redis://localhost:6379"  # os.environ['REDIS_URL']
+REDIS_URL = os.environ.get("REDIS_URL","redis://localhost:6379")  # os.environ['REDIS_URL']
 
 
 CELERY_BROKER_URL = REDIS_URL

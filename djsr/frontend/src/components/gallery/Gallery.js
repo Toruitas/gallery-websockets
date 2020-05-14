@@ -52,20 +52,6 @@ export const GalleryWebSockets = () => {
     // https://usehooks.com/useEventListener/
     useEventListener('mousemove', handleMoveSendPos);
 
-    // useMemo(()=>{
-    //     console.log(lastMessage);
-    //     if (lastJsonMessage){
-    //         setNumUsers(lastJsonMessage.length);
-    //         delete lastJsonMessage[uuid];  // remove own uuid
-    //         let renderList = [];
-    //         for (const [uuid, x, y] of Object.entries(cursors)){
-    //             let style = `transform:translate(${x}px, ${y}px)`
-    //             renderList.concat(<img src={PointerImg} style={style} />) 
-    //         }
-    //         setCursors(renderList);
-    //     }
-    // }, [lastMessage])
-
     useEffect(()=>{
         if (lastJsonMessage){
             setNumUsers(Object.keys(lastJsonMessage).length-1);

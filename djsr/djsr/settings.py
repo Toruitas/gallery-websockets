@@ -117,7 +117,7 @@ USE_TZ = True
 # https://devcenter.heroku.com/articles/django-assets
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_URL = '/static/'
+STATIC_URL = '/djsr/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # STATICFILES_DIRS = [

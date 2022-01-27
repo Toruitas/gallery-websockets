@@ -30,7 +30,7 @@
     "react-three-fiber": "^4.2.4",
     "react-use-websocket": "^2.0.1",
     "redux-logger": "^3.0.6",
-    "three": "^0.116.1",
+    "three": "^0.137.0",
     "uuid": "^8.0.0"
   },
   "devDependencies": {
